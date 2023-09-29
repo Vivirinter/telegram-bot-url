@@ -7,7 +7,7 @@ This repository contains source code for a Go-based Telegram bot that performs c
 1. Clone the repository
 
 ```sh
-https://github.com/Vivirinter/telegram-bot-url.git
+git clone https://github.com/Vivirinter/telegram-bot-url.git
 ```
 2. Navigate to the source code directory
 
