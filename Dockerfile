@@ -1,4 +1,3 @@
-# Dockerfile
 FROM golang:1.21-alpine as builder
 
 RUN apk update && apk add --no-cache git
