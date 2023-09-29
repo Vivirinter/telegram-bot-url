@@ -23,7 +23,7 @@ docker build -t telegram-bot-url .
 4. Run Docker container
 
 ```sh 
-docker run -d -p 8080:8080 telegram-bot-url
+docker run -p 8080:8080 -e TELEGRAM_TOKEN=<TOKEN> telegram-bot-url
 ```
 
 ## Environment Variables
