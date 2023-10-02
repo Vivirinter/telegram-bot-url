@@ -58,7 +58,7 @@ func (c *Checker) CheckHTTPS(link *models.Link) error {
 func (c *Checker) processResponse(resp *http.Response, link *models.Link) error {
 	c.setupResponseInfo(resp, link)
 
-	if c.isRedirect(resp.StatusCode) {
+	if c.IsRedirect(resp.StatusCode) {
 		return c.handleRedirect(resp, link)
 	}
 
@@ -76,7 +76,7 @@ func (c *Checker) setupResponseInfo(resp *http.Response, link *models.Link) {
 	link.ResponseInfo.StatusCode = resp.StatusCode
 }
 
-func (c *Checker) isRedirect(status int) bool {
+func (c *Checker) IsRedirect(status int) bool {
 	return status >= 300 && status < 400
 }
 
