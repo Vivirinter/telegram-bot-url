@@ -1,0 +1,12 @@
+version: '3.9'
+services:
+  telegram-url-bot:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8080"
+    command: ["./telegram-bot-url"]
+    tty: true
+    env_file:
+      - .env
