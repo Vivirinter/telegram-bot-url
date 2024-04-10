@@ -1,0 +1,69 @@
+replicaCount: 1
+
+image:
+  repository: nginx
+  pullPolicy: Always
+  tag: "latest"
+
+imagePullSecrets: []
+nameOverride: ""
+fullnameOverride: ""
+
+imageCredentials:
+  docker-registry:
+    name: general-registry
+    registry: docker.io
+    username: "aaa"
+    password: "bbb"
+  docker-service-registry:
+    name: service-registry
+    registry: docker.io
+    username: "aaa"
+    password: "bbb"
+
+serviceAccount:
+  create: true
+  automount: true
+  annotations: {}
+  name: ""
+
+podAnnotations: {}
+podLabels: {}
+
+podSecurityContext: {}
+
+securityContext: {}
+
+service:
+  type: ClusterIP
+  port: 80
+
+ingress:
+  enabled: false
+  className: "traefik"
+
+resources:
+   limits:
+     cpu: 100m
+     memory: 128Mi
+   requests:
+     cpu: 100m
+     memory: 128Mi
+
+autoscaling:
+  enabled: false
+  minReplicas: 1
+  maxReplicas: 100
+  targetCPUUtilizationPercentage: 80
+
+volumes: []
+
+volumeMounts: []
+
+nodeSelector: {}
+
+tolerations: []
+
+affinity: {}
+
+TELEGRAM_TOKEN: ""
